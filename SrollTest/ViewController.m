@@ -17,11 +17,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UIScrollView *scrollView = [[UIScrollView alloc]init];
+    scrollView.frame = self.view.bounds;
+    
+       scrollView.bounces = NO;
+    
+    
+   
+    CGRect rect = CGRectMake(0, 0, 5000, 5000);
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:rect];
+    
+        imageView.image = [UIImage imageNamed:@"IMG_0232.JPG"];
+    
+   
+    [scrollView addSubview:imageView];
+    
+    
+    
+    scrollView.contentSize = imageView.bounds.size;
+    
+       [self.view addSubview:scrollView];
+    
+ 
+    [scrollView flashScrollIndicators];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
+          
+            }
+
+
 
 @end
